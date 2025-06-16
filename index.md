@@ -91,8 +91,8 @@ One of the best parts about Github is that you can view how other people set up 
 To watch the BSE tutorial on how to create a portfolio, click here.
 
 # Starter Project – Retro Arcade Console
-![Book logo](starter_1.png)
-![Book logo](starter_2.png)
+![photo 1](starter_1.png)
+![photo 2](starter_2.png)
 This console has multiple games on like Snake and Tetris. The parts and code were preloaded and all I needed to do was solder different pieces to the main PCB. It can be powered thorugh a mini-USB port or 3AAA batteries.
 
 This gave me a great way to practice my soldering skills as there were many points I had to solder together. However, it turned out great and all the components work!
