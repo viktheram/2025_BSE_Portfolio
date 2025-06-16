@@ -91,8 +91,8 @@ One of the best parts about Github is that you can view how other people set up 
 To watch the BSE tutorial on how to create a portfolio, click here.
 
 # Starter Project – Retro Arcade Console
-https://github.com/viktheram/2025_BSE_Portfolio/blob/4875bf07c0d614562d30fe54a9674d60af055bd4/2025%20BSE%20Portfolio%20Image%202823.png
-https://github.com/viktheram/2025_BSE_Portfolio/blob/4875bf07c0d614562d30fe54a9674d60af055bd4/2025%20BSE%20Portfolio%20Image%202824.png
+![Side Image](starter_1.png)
+![Side Image(starter_2.png)
 This console has multiple games on like Snake and Tetris. The parts and code were preloaded and all I needed to do was solder different pieces to the main PCB. It can be powered thorugh a mini-USB port or 3AAA batteries.
 
 This gave me a great way to practice my soldering skills as there were many points I had to solder together. However, it turned out great and all the components work!
