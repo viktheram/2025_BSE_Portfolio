@@ -1,3 +1,1 @@
-Checkout the braches above to view the code, and also the final page for presentation!
-
-Insert description below
+Below you will find all my iterations! There will be many packets where the sole purpose of the code is to test the display functionality while some packets will be the entire code. The code is intended to work on Arduino IDE. The code is copied from there into the github.
