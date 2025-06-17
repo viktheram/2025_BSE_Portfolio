@@ -1,3 +1,5 @@
+//Very first iteration! This is solely to test the wiring of the button and also start storing the gap between different button presses!
+
 const int buttonPin = 2;   // Pushbutton pin
 const int ledPin = 13;     // LED pin
 
