@@ -91,9 +91,11 @@ One of the best parts about Github is that you can view how other people set up 
 To watch the BSE tutorial on how to create a portfolio, click here.
 
 # Starter Project – Retro Arcade Console
-<img src="https://github.com/viktheram/2025_BSE_Portfolio/blob/6fbc0c6aa3d30cd17d34e85f9a123ef34e92765c/starter_1.png" width="500"> <img src="https://github.com/viktheram/2025_BSE_Portfolio/blob/6fbc0c6aa3d30cd17d34e85f9a123ef34e92765c/starter_2.png" width="500">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-vWqwQfv9GA?si=EgtACB9ZjJk6BhVi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 This console has multiple games on like Snake and Tetris. The parts and code were preloaded and all I needed to do was solder different pieces to the main PCB. It can be powered thorugh a mini-USB port or 3AAA batteries.
 
-This gave me a great way to practice my soldering skills as there were many points I had to solder together. However, it turned out great and all the components work!
+<img src="https://github.com/viktheram/2025_BSE_Portfolio/blob/6fbc0c6aa3d30cd17d34e85f9a123ef34e92765c/starter_1.png" width="500"> <img src="https://github.com/viktheram/2025_BSE_Portfolio/blob/6fbc0c6aa3d30cd17d34e85f9a123ef34e92765c/starter_2.png" width="500">
+
+This gave me a great way to practice my soldering skills as there were many points I had to solder together. The most challenging part of soldering each contraption while keeping them in place and alligned. The pins were also extremely close together, and I had never had to solder with this much precision before. Attaching the battery was also difficult as I decided to shorten the wire. This meant that I needed to cut the while and re-solder it together. Because I had already attached the wires to the PCB and the battery, soldering them back together was very difficult as I had to position them between the battery and the PCB. I had very little room. However, it turned out great and all the components work!
 
