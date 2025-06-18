@@ -1,5 +1,6 @@
 //this combines the code from both the button and the servo. Instead of replaying the song by simply turning on the light, this time, the arduino replays the song using the servo.
 //Most of it was copy pasted. The only thing I changed was (1) replacing the activate light code with the rotate servo (2) changing the range of rotation from the servo. 
+//I combined the code from button_replay_01.ino and smrazaS51_rotation_full.ino
 
 #include <Wire.h>  // Library for I2C communication (used by the servo driver)
 #include <Adafruit_PWMServoDriver.h>  // Library to control the PCA9685 servo driver
