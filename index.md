@@ -1,10 +1,13 @@
 # Marble Music Machine
-This is a music machine that replays the notes you input by dropping marbles onto a Xylophone! 
+For full documentation visit [this](https://docs.google.com/document/d/19l-sdvGk2wv6FiNkObK4XHLtHroH8l88qlTdeSVrPsI/edit?tab=t.0#heading=h.u3em2oo7d9ti) google document 
+This is a music machine that replays the notes you input by dropping marbles onto a Xylophone! Rather than playing directly on the xylophone, you pre-program notes by pushing buttons. After you are done, you press the stop button twice (once to stop and once to start playing) then watch as balls are sent bouncing off the keys of the xylophone. This will loop forever because of the ball lift on the side!
 
 You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
 ```HTML 
-<!--- This is an HTML comment in Markdown -->
-<!--- Anything between these symbols will not render on the published site -->
+Milestones:
+Milestone 1: Program button interface to record and store notes
+Milestone 2: Design method for dropping balls onto the xylophone. Design method to control where the balls drop to (to drop on different notes)
+Milestone 3: Connect that movement to the arduino for the final design!
 ```
 
 | Vikram D | Hillbrook School | Civil and Mechanical Engineering | Incoming Sophomore |
