@@ -1,0 +1,1 @@
+This is where I will add all iterations of my CAD files. I made these on Autodesk Fusion so I will be including both a .stl and a .f3d. The stl will allow you the send it directly to the 3D printer while the .f3d should allow you to open it in fusion, see my edits timeline, and view my sketches.
