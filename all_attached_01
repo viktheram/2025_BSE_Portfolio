@@ -1,0 +1,194 @@
+#include <Wire.h>
+#include <Adafruit_PWMServoDriver.h>
+
+// === CONFIGURATION MACROS ===
+#define MAX_EVENTS 50
+#define SERVO_MIN  100   // Adjust for your servo
+#define SERVO_MAX  500
+#define SERVO_MOVE_DURATION 200  // Time in ms to hold servo position
+
+// Macro to move a servo and then disable its signal to save power
+#define MOVE_SERVO(channel) do { \
+  pwm.setPWM(channel, 0, SERVO_MIN); \
+  delay(SERVO_MOVE_DURATION); \
+  pwm.setPWM(channel, 0, SERVO_MAX); \
+  delay(SERVO_MOVE_DURATION); \
+  pwm.setPWM(channel, 0, 0); \
+} while (0)
+
+// === HARDWARE SETUP ===
+// Buttons: B0 (22), B1 (24), ..., B15 (52), B16 (54)
+const int buttonPins[17] = {
+  22, 24, 26, 28, 30, 32, 34, 36,
+  38, 40, 42, 44, 46, 48, 50, 52, 54
+};
+
+// PCA9685 Servo Driver
+Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
+
+// === RECORDING STRUCTURE ===
+struct PressEvent {
+  byte buttonIndex;         // Button 1–15
+  unsigned long delayMs;    // Time since last press
+};
+
+PressEvent events[MAX_EVENTS];
+int eventCount = 0;
+
+enum SystemState { IDLE, ARMED, RECORDING, REPLAYING };
+SystemState currentState = IDLE;
+
+unsigned long lastPressTime = 0;
+bool buttonStates[17] = {0};
+bool lastButtonStates[17] = {0};
+
+bool loopingEnabled = false;  // Set to true to loop playback
+
+// === SETUP ===
+void setup() {
+  Serial.begin(9600);
+  pwm.begin();
+  pwm.setPWMFreq(50); // 50 Hz for standard servos
+
+  // Set button pins as input
+  for (int i = 0; i < 17; i++) {
+    pinMode(buttonPins[i], INPUT);
+  }
+
+  // Disable all servos at startup
+  for (int ch = 1; ch <= 15; ch++) {
+    pwm.setPWM(ch, 0, 0);
+  }
+
+  Serial.println("System ready. Press Button 0 to start recording.");
+}
+
+// === MAIN LOOP ===
+void loop() {
+  readButtons();
+
+  // Handle looping toggle (Button 16)
+  if (buttonPressed(16)) {
+    loopingEnabled = !loopingEnabled;
+    Serial.print("Looping playback is now ");
+    Serial.println(loopingEnabled ? "ENABLED" : "DISABLED");
+    delay(200); // debounce
+  }
+
+  switch (currentState) {
+    case IDLE:
+      if (buttonPressed(0)) {
+        Serial.println("Started. Press any button 1-15 to begin.");
+        currentState = ARMED;
+      }
+      break;
+
+    case ARMED:
+      for (int i = 1; i <= 15; i++) {
+        if (buttonPressed(i)) {
+          startRecording(i);
+          break;
+        }
+      }
+      break;
+
+    case RECORDING:
+      for (int i = 1; i <= 15; i++) {
+        if (buttonPressed(i)) {
+          recordEvent(i);
+        }
+      }
+      
+      if (eventCount) == MAX_EVENTS{
+        Serial.println("You have reached the maximum number of notes allowed")
+        currentState = REPLAYING;
+      }
+
+      if (buttonPressed(0)){
+        Serial.println("Recording stopped. Starting replay.");
+        currentState = REPLAYING;
+      }
+      break;
+
+    case REPLAYING:
+      replayEvents();
+      if (!loopingEnabled) {
+        currentState = IDLE;
+        Serial.println("Returning to IDLE state.");
+      }
+      break;
+  }
+}
+
+// === READ BUTTON STATES ===
+void readButtons() {
+  for (int i = 0; i < 17; i++) {
+    buttonStates[i] = digitalRead(buttonPins[i]);
+  }
+}
+
+// === EDGE DETECTION FOR BUTTONS ===
+bool buttonPressed(int index) {
+  bool pressed = (buttonStates[index] == HIGH && lastButtonStates[index] == LOW);
+  lastButtonStates[index] = buttonStates[index];
+  return pressed;
+}
+
+// === START RECORDING ===
+void startRecording(int firstButton) {
+  Serial.println("==> Recording started");
+  eventCount = 0;
+  lastPressTime = millis();
+  recordEvent(firstButton);
+  currentState = RECORDING;
+}
+
+// === RECORD AN EVENT ===
+void recordEvent(int buttonIndex) {
+  if (eventCount >= MAX_EVENTS) return;
+
+  unsigned long currentTime = millis();
+  unsigned long delay = currentTime - lastPressTime;
+  lastPressTime = currentTime;
+
+  events[eventCount].buttonIndex = buttonIndex;
+  events[eventCount].delayMs = delay;
+
+  Serial.print("Recorded button B");
+  Serial.print(buttonIndex);
+  Serial.print(" after ");
+  Serial.print(delay);
+  Serial.println(" ms");
+
+  eventCount++;
+}
+
+// === REPLAY EVENTS ===
+void replayEvents() {
+  Serial.print("==> Replaying ");
+  Serial.print(eventCount);
+  Serial.println(" events...");
+
+  do {
+    for (int i = 0; i < eventCount; i++) {
+      PressEvent e = events[i];
+      int ch = e.buttonIndex;
+
+      Serial.print("Moving servo ");
+      Serial.print(ch);
+      Serial.print(", then waiting ");
+      Serial.print(e.delayMs);
+      Serial.println(" ms");
+
+      MOVE_SERVO(ch);
+      delay(e.delayMs);
+    }
+
+    if (loopingEnabled) {
+      Serial.println("-- Looping replay...");
+    }
+
+  } while (loopingEnabled);
+
+  Serial.println("==> Replay complete.");
+}
