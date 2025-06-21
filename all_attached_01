@@ -1,3 +1,5 @@
+//The code with all of the buttons and servos attached.
+
 #include <Wire.h>
 #include <Adafruit_PWMServoDriver.h>
 
