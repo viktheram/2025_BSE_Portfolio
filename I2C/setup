@@ -1,5 +1,6 @@
 //File to setup and find address of I2C display.
-//Look at serial monitor for address
+//Look at serial monitor for address.
+//Full instructions: https://www.geeksforgeeks.org/electronics-engineering/how-to-interface-i2c-lcd-display-with-arduino/
 
 #include <LiquidCrystal_I2C.h>
 // I2C address finding
