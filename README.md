@@ -1,6 +1,7 @@
 <b> About the github </b>
-If you are getting lost in all of the files and you want to follow my step by step (with hyperlinks to my CAD and my code here (so you can find it quickly) go to:
-https://docs.google.com/document/d/19l-sdvGk2wv6FiNkObK4XHLtHroH8l88qlTdeSVrPsI/edit?tab=t.0
+To learn about my project go [here](https://viktheram.github.io/2025_BSE_Portfolio/). This will give you information about parts used. Then you can come to the github to download codea and CAD.
+
+If you are still getting lost in all of the files and you want to follow my step by step (with hyperlinks to my CAD and my code here (so you can find it quickly) go to [this](https://docs.google.com/document/d/19l-sdvGk2wv6FiNkObK4XHLtHroH8l88qlTdeSVrPsI/edit?tab=t.0) google doc.
 
 You can also go to releases and download all the files from the final release there.
 
