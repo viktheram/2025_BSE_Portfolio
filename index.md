@@ -67,7 +67,9 @@ Now that this was all done, I started printing a case for my arduino and breadbo
 My next steps are to finish enclosing my buttons and to start working on the dispenser mechanism. I did some prototyping while I was waiting for my buttons to arrive, and in between code updates, but now I need to make it more refined. My current prototype is just made out of cardboard. I will move to using acrylic and making 15 channels. I also need to connect my servo to my turning mechanism.
 
 # Schematics 
-Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
+<div style="position: relative; width: 100%; padding-top: calc(max(56.25%, 400px));">
+  <iframe src="https://app.cirkitdesigner.com/project/b5c1739f-cfc4-4bea-ba0a-5540df392f83?view=interactive_preview" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"></iframe>
+</div> 
 
 # Code
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
