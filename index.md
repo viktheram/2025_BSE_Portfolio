@@ -1,3 +1,4 @@
+Last updated: Jun 24 11:29:38
 # Marble Music Machine
 For full documentation visit [this](https://docs.google.com/document/d/19l-sdvGk2wv6FiNkObK4XHLtHroH8l88qlTdeSVrPsI/edit?tab=t.0#heading=h.u3em2oo7d9ti) google document 
 This is a music machine that replays the notes you input by dropping marbles onto a Xylophone! Rather than playing directly on the xylophone, you pre-program notes by pushing buttons. After you are done, you press the stop button twice (once to stop and once to start playing) then watch as balls are sent bouncing off the keys of the xylophone. This will loop forever because of the ball lift on the side!
