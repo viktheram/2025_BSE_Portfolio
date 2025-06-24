@@ -1,5 +1,6 @@
 //includes new display! look at IC2 for setup and test code.
-//final code!
+//this code can reliably take inputs and replay them on the servo.
+//adjustment to the servo movement macro needed.
 
 #include <LiquidCrystal_I2C.h>
 #include <Wire.h>
