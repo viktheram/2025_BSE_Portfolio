@@ -97,7 +97,7 @@ To watch the BSE tutorial on how to create a portfolio, click here.
 
 This console has multiple games on like Snake and Tetris. The parts and code were preloaded and all I needed to do was solder different pieces to the main PCB. It can be powered thorugh a mini-USB port or 3AAA batteries.
 
-<div style="text-align:left"><img src="starter_1.png" alt="front of the starter project" width="400"/> </div<div style="text-align:right"><img src="starter_2.png" alt="front of the starter project" width="400"/></div>
+<div style="text-align:left"><img src="starter_1_2.png" alt="front of the starter project" width="400"/> </div>
 
 This gave me a great way to practice my soldering skills as there were many points I had to solder together. The most challenging part of soldering each contraption while keeping them in place and alligned. The pins were also extremely close together, and I had never had to solder with this much precision before. Attaching the battery was also difficult as I decided to shorten the wire. This meant that I needed to cut the while and re-solder it together. Because I had already attached the wires to the PCB and the battery, soldering them back together was very difficult as I had to position them between the battery and the PCB. I had very little room. However, it turned out great and all the components work!
 
