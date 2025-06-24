@@ -13,6 +13,7 @@
 #define SERVO_MOVE_DURATION 200  // ms for each servo phase (in/out)
 bool recording = false;
 bool replaying = false;
+bool idle = false;
 
 // === HARDWARE SETUP ===
 const int buttonPins[17] = {
@@ -77,11 +78,7 @@ void setup() {
   //Clear LED
   lcd.clear();
 
-  Serial.println("System Ready. Press S to start recording.");
-  lcd.setCursor(0,0);
-  lcd.print("Welcome!");
-  lcd.setCursor(0,1);
-  lcd.print("Press S to Begin");
+  currentState = IDLE;
 }
 
 // === MAIN LOOP ===
@@ -103,13 +100,23 @@ void loop() {
 
   switch (currentState) {
     case IDLE:
+      replaying = true;
+      if (idle == false){
+        lcd.clear();
+        lcd.setCursor(0,0);
+        lcd.print("Welcome!");
+        lcd.setCursor(0,1);
+        lcd.print("Press S to start");
+        idle = true;
+      }
       if (buttonPressed(0)) {
         Serial.println("Started. Press any button 1-15 to begin.");
         lcd.clear();
         lcd.setCursor(0,0);
-        lcd.print("Activated");
+        lcd.print("Started");
         lcd.setCursor(0,1);
         lcd.print("Ready to record");
+        idle = false;
         currentState = ARMED;
       }
       break;
@@ -163,13 +170,20 @@ void loop() {
     case REPLAYING:
       recording = false;
       if (replaying == false){
-        replaying = true;
         lcd.clear();
         lcd.setCursor(0,0);
         lcd.print("Now replaying");
+        lcd.setCursor(0,1);
+        lcd.print("Press S to stop");
       }
       
       replayEventsNonBlocking();
+        lcd.clear();
+        lcd.setCursor(0,0);
+        lcd.print("Replay complete");
+        lcd.setCursor(0,1);
+        lcd.print("Now idle");
+        delay(1000);
       break;
   }
   replaying = false;
@@ -234,6 +248,9 @@ void replayEventsNonBlocking() {
   bool allTriggered = true;
 
   for (int i = 0; i < eventCount; i++) {
+    if (buttonPressed(0)) {
+      break;
+    } 
     if (!events[i].triggered && now >= events[i].timestamp) {
       int ch = events[i].buttonIndex;
       Serial.print("Turning servo ");
@@ -293,3 +310,4 @@ void updateActiveServos() {
     }
   }
 }
+
