@@ -1,5 +1,5 @@
-Last updated: Jun 24 12:03:51
 # Marble Music Machine
+Last updated: Jun 24 12:10:04
 For full documentation visit [this](https://docs.google.com/document/d/19l-sdvGk2wv6FiNkObK4XHLtHroH8l88qlTdeSVrPsI/edit?tab=t.0#heading=h.u3em2oo7d9ti) google document. Because the github can be hard to navigate, this also includes direct links to everything I used - all my libraries, and all my step by step code. But, if you don't want to do that, I've created one final release that will allow you to simply download everything you need for final assemlby.
 
 This is a music machine that replays the notes you input by dropping marbles onto a Xylophone! Rather than playing directly on the xylophone, you pre-program notes by pushing buttons. After you are done, you press the stop button twice (once to stop and once to start playing) then watch as balls are sent bouncing off the keys of the xylophone. This will loop forever because of the ball lift on the side!
@@ -7,9 +7,9 @@ This is a music machine that replays the notes you input by dropping marbles ont
 You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
 ```HTML 
 Milestones:
-Milestone 1: Program button interface to record and store notes
-Milestone 2: Design method for dropping balls onto the xylophone. Design method to control where the balls drop to (to drop on different notes)
-Milestone 3: Connect that movement to the arduino for the final design!
+Milestone 1: Program button interface to record and store notes.
+Milestone 2: Design method for dropping balls onto the xylophone. Design method to control where the balls drop to (to drop on different notes).
+Milestone 3: Design conveyor belt to move marbles back to the top for endless replaying!
 ```
 
 | Vikram D | Hillbrook School | Civil and Mechanical Engineering | Incoming Sophomore |
@@ -49,8 +49,9 @@ For your second milestone, explain what you've worked on since your previous mil
 
 <iframe width="875" height="400" src="https://www.youtube.com/embed/KsqplpovlIQ?si=DtapKUqWkmuTwKQ9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-I planned to build my project in two stages: The coding stage and the design and building stage. During the coding stage, I worked on programming the arduino to receive inputs from a button, and then replay it on a servo. I started with one buttton and one servo. The code was quite simple as I just needed to record one variable: the gap between the button presses. I used an array to store the values. Below you can see my images when my setup was quite simple. Just one servo, and one button. (This image is of them seperated, I eventually merged them together). The hardest part of this stage was setting up the servo shield. Because it didn't use the digital or analog pins on the arduino (but instead used channels), I needed to import libraries and set that up. It wasn't hard once I knew what to do, but the troubleshooting was quite annoying. 
+I planned to build my project in two stages: The coding stage and the design and building stage. During the coding stage, I worked on programming the arduino to receive inputs from a button, and then replay it on a servo. I started with one buttton and one servo. The code was quite simple as I just needed to record one variable: the gap between the button presses. I used an array to store the values. The hardest part of this stage was setting up the servo shield. Because it didn't use the digital or analog pins on the arduino (but instead used channels), I needed to import libraries and set that up. It wasn't hard once I knew what to do, but the troubleshooting was quite annoying. 
 
+Below: My ver simple setup with just one servo and one button. I eventually merged the two together.
 <div style="text-align:left"><img src="one_button_servo.png" alt="front of the starter project" width="1500"/> </div>
 
 However, as I got more buzzers, I had to calculate and store more gaps. I needed more arrays, more wires, and more control over the servos. At the beginning, I just duplicated my code to be able to account for more buttons, and then control the respective servos. The servo shield was very helpful at this point. I thought I was done and was quite satisfied.
@@ -59,8 +60,10 @@ However, eventually, I found some limitations. These limitations were because my
 
 My updated solution used something different. Instead of storing each servo press in relation to the servo before it, It would store the servo press in relation to the beginning and create a timeline. Then, when replaying the values on the servo, the arduino would go through the timeline, and whenever it reached a stored event (each button press) it would move the servo. I also changed a function. I changed it from <i>delay</i> to <i>millis</i>. That way the timer would be able to run in parallel to everything else. That way, if there were many stored events at the same time, or extremely close together, the arduino would be able to move all servos at the same time using a macro that I defined. And it worked! The start of the rotation of each servo has the exact same gap as the start of each button press.
 
-Now that this was all done, I started printing a case for my arduino and breadboard, and also added a screen.
+Now that this was all done, I started printing a case for my arduino and breadboard, and also added a screen. Below you can see my before and after from before the case to after the case. I still have to add a case for my buttons.
 <div style="text-align:left"><img src="before_after_cables.png" alt="front of the starter project" width="1500"/> </div>
+
+My next steps are to finish enclosing my buttons and to start working on the dispenser mechanism. I did some prototyping while I was waiting for my buttons to arrive, and in between code updates, but now I need to make it more refined. My current prototype is just made out of cardboard. I will move to using acrylic and making 15 channels. I also need to connect my servo to my turning mechanism.
 
 # Schematics 
 Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
