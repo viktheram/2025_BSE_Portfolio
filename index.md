@@ -98,10 +98,10 @@ To watch the BSE tutorial on how to create a portfolio, click here.
 This console has multiple games on like Snake and Tetris. The parts and code were preloaded and all I needed to do was solder different pieces to the main PCB. It can be powered thorugh a mini-USB port or 3AAA batteries.
 
 <div style="text-align:left">
-  <img src="starter_1.png" alt="front of the starter project" width="400"/>
+  <img src="starter_1.png" alt="front of the starter project" width="200"/>
 </div>
 <div style="text-align:right">
-  <img src="starter_2.png" alt="front of the starter project" width="400"/>
+  <img src="starter_2.png" alt="front of the starter project" width="200"/>
 </div>
 
 
