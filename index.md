@@ -13,7 +13,7 @@ Milestone 2: Design method for dropping balls onto the xylophone. Design method 
 Milestone 3: Design conveyor belt to move marbles back to the top for endless replaying!
 ```
 
-| **Part** | **Note** | **Price** | **Link** |
+| **Name** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
 | Vikram D | Hillbrook School | Civil and Mechanical Engineering | Incoming Sophomore |
 
