@@ -91,6 +91,7 @@ void loop() {
 # Bill of Materials
 Below are materials! I've seperated it into two parts: For Milestone 1, and for Milestone 2.
 
+**Milestone 1**
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
 | Arduino Mega 2560 | The brains of the entire operation. | $22 | <a href="https://www.amazon.com/ELEGOO-ATmega2560-ATMEGA16U2-Arduino-Compliant/dp/B01H4ZLZLQ?sr=8-3"> Link </a> |
@@ -103,7 +104,7 @@ Below are materials! I've seperated it into two parts: For Milestone 1, and for 
 |**Generic Parts:**| Jumper wires, tools for construction (3D printer, filament, wire cutter, jumper wires (MM and MF)|
 
 
-
+**Milestone 2**
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
 | Acrylic | 1mm 11x17 Acrylic (4 Pack)  | $17 | <a href="https://www.amazon.com/ELEGOO-ATmega2560-ATMEGA16U2-Arduino-Compliant/dp/B01H4ZLZLQ?sr=8-3"> Link </a> |
