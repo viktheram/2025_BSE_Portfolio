@@ -181,6 +181,7 @@ void loop() {
     case REPLAYING:
       recording = false;
       if (replaying == false){
+        replaying = true;
         lcd.clear();
         lcd.setCursor(0,0);
         lcd.print("Now replaying");
@@ -195,7 +196,7 @@ void loop() {
         lcd.print("Stopped Replay");
         lcd.setCursor(0,1);
         lcd.print("System idle");
-        delay(1000);
+        delay(3000);
         currentState = IDLE;
         break;
     } 
