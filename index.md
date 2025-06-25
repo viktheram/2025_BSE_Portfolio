@@ -1,5 +1,5 @@
 # Marble Music Machine
-Last updated: Jun 24 12:11:28
+Last updated: Jun 25 10:32:28
 
 For full documentation visit [this](https://docs.google.com/document/d/19l-sdvGk2wv6FiNkObK4XHLtHroH8l88qlTdeSVrPsI/edit?tab=t.0#heading=h.u3em2oo7d9ti) google document. Because the github can be hard to navigate, this also includes direct links to everything I used - all my libraries, and direct links to each stage in my prototyping. But, if you don't want to do that, I've created one final release that will allow you to simply download everything you need for final assembly.
 
@@ -13,8 +13,9 @@ Milestone 2: Design method for dropping balls onto the xylophone. Design method 
 Milestone 3: Design conveyor belt to move marbles back to the top for endless replaying!
 ```
 
-| Vikram D | Hillbrook School | Civil and Mechanical Engineering | Incoming Sophomore |
+| **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
+| Vikram D | Hillbrook School | Civil and Mechanical Engineering | Incoming Sophomore |
 
 **Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.**
 
@@ -88,9 +89,9 @@ void loop() {
 ```
 
 # Bill of Materials
-Here's where you'll list the parts in your project. To add more rows, just copy and paste the example rows below.
-Don't forget to place the link of where to buy each component inside the quotation marks in the corresponding row after href =. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize this to your project needs. 
+Below are materials! I've seperated it into two parts: For Milestone 1, and for Milestone 2.
 
+**Milestone 1 (Electrical Parts)**
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
 | Arduino Mega 2560 | The brains of the entire operation. | $22 | <a href="https://www.amazon.com/ELEGOO-ATmega2560-ATMEGA16U2-Arduino-Compliant/dp/B01H4ZLZLQ?sr=8-3"> Link </a> |
@@ -100,6 +101,7 @@ Don't forget to place the link of where to buy each component inside the quotati
 | Micro Servos (20 Pack) | These are the servos that I controlled. | $31 | <a href="https://www.amazon.com/Smraza-Helicopter-Airplane-Control-Arduino/dp/B0F32WF12W?sr=8-10"> Link </a>
 | IC2 16x12 LCD Display | The display that displayed what the arduino was doing | $9 | <a href="https://www.amazon.com/GeeekPi-Character-Backlight-Raspberry-Electrical/dp/B07S7PJYM6?sr=8-7"> Link </a> |
 | 5V Power Adapter 2 Pack | This is what gave power to the arduino and the shield | $10 | <a href="https://www.amazon.com/Power-Adapter-100-240V-Transformers-Supply/dp/B08722QC75?sr=8-3"> Link </a> |
+**Generic Parts:** Jumper wires, tools for construction (3D printer, filament, wire cutter, jumper wires)
 
 # Other Resources/Examples
 One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
