@@ -42,27 +42,27 @@ My next steps are to finish enclosing my buttons and to start working on the dis
 
 # Second Milestone
 Coming soon!
-//**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
+<!--**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
-//<iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-//For your second milestone, explain what you've worked on since your previous milestone. You can highlight:
-//- Technical details of what you've accomplished and how they contribute to the final goal
-//- What has been surprising about the project so far
-//- Previous challenges you faced that you overcame
-//- What needs to be completed before your final milestone 
+For your second milestone, explain what you've worked on since your previous milestone. You can highlight:
+- Technical details of what you've accomplished and how they contribute to the final goal
+- What has been surprising about the project so far
+- Previous challenges you faced that you overcame
+- What needs to be completed before your final milestone-->
 
 # Final Milestone
 Coming soon!
-//**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
+<!--**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
-//<iframe width="560" height="315" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-//For your final milestone, explain the outcome of your project. Key details to include are:
-//- What you've accomplished since your previous milestone
-//- What your biggest challenges and triumphs were at BSE
-//- A summary of key topics you learned about
-//- What you hope to learn in the future after everything you've learned at BSE
+For your final milestone, explain the outcome of your project. Key details to include are:
+- What you've accomplished since your previous milestone
+- What your biggest challenges and triumphs were at BSE
+- A summary of key topics you learned about
+- What you hope to learn in the future after everything you've learned at BSE -->
 
 # Schematics 
 <div style="position: relative; width: 100%; padding-top: calc(max(56.25%, 400px));">
@@ -70,7 +70,7 @@ Coming soon!
 </div> 
 
 # Code
-//Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
+<!--Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. -->
 
 ```c++
 //Code coming soon!
@@ -109,10 +109,10 @@ Below are materials! I've seperated it into two parts: For Milestone 1, and for 
 | Acrylic 3mm 12x24 Acrylic (2 Pack) |This is the acrylic I used as the baseplate for my marble storage section. (Before the dispenser mechanism)| $24 | <a href="https://www.amazon.com/2-Pack-Clear-Acrylic-Sheet-Plexiglass/dp/B0899QVSY1?sr=8-3"> Link </a> |
 
 # Other Resources/Examples
-One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
+<!--One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
 - [Example 1](https://trashytuber.github.io/YimingJiaBlueStamp/)
 - [Example 2](https://sviatil0.github.io/Sviatoslav_BSE/)
-- [Example 3](https://arneshkumar.github.io/arneshbluestamp/)
+- [Example 3](https://arneshkumar.github.io/arneshbluestamp/)-->
 
 To watch the BSE tutorial on how to create a portfolio, click here.
 
