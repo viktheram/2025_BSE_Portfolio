@@ -91,7 +91,6 @@ void loop() {
 # Bill of Materials
 Below are materials! I've seperated it into two parts: For Milestone 1, and for Milestone 2.
 
-**Milestone 1 (Electrical Parts)**
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
 | Arduino Mega 2560 | The brains of the entire operation. | $22 | <a href="https://www.amazon.com/ELEGOO-ATmega2560-ATMEGA16U2-Arduino-Compliant/dp/B01H4ZLZLQ?sr=8-3"> Link </a> |
@@ -103,7 +102,8 @@ Below are materials! I've seperated it into two parts: For Milestone 1, and for 
 | 5V Power Adapter 2 Pack | This is what gave power to the arduino and the shield | $10 | <a href="https://www.amazon.com/Power-Adapter-100-240V-Transformers-Supply/dp/B08722QC75?sr=8-3"> Link </a> |
 |**Generic Parts:**| Jumper wires, tools for construction (3D printer, filament, wire cutter, jumper wires (MM and MF)|
 
-**Milestone 2 (Mechanical Parts)**
+
+
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
 | Acrylic | 1mm 11x17 Acrylic (4 Pack)  | $17 | <a href="https://www.amazon.com/ELEGOO-ATmega2560-ATMEGA16U2-Arduino-Compliant/dp/B01H4ZLZLQ?sr=8-3"> Link </a> |
