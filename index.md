@@ -107,8 +107,8 @@ Below are materials! I've seperated it into two parts: For Milestone 1, and for 
 **Milestone 2**
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
-| Acrylic | 1mm 11x17 Acrylic (4 Pack)  | $17 | <a href="https://www.amazon.com/ELEGOO-ATmega2560-ATMEGA16U2-Arduino-Compliant/dp/B01H4ZLZLQ?sr=8-3"> Link </a> |
-| Acrylic | 3mm 12x24 Acrylic (2 Pack) | $24 | <a href="https://www.amazon.com/2-Pack-Clear-Acrylic-Sheet-Plexiglass/dp/B0899QVSY1?sr=8-3"> Link </a> |
+| Acrylic 1mm 11x17 Acrylic (4 Pack)| This is the acrylic I used to create the walls for the marble chute. | $17 | <a href="https://www.amazon.com/ELEGOO-ATmega2560-ATMEGA16U2-Arduino-Compliant/dp/B01H4ZLZLQ?sr=8-3"> Link </a> |
+| Acrylic 3mm 12x24 Acrylic (2 Pack) | This is the acrylic I used as the baseplate for my marble storage section. | $24 | <a href="https://www.amazon.com/2-Pack-Clear-Acrylic-Sheet-Plexiglass/dp/B0899QVSY1?sr=8-3"> Link </a> |
 
 # Other Resources/Examples
 One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
