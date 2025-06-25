@@ -55,6 +55,16 @@ bool loopingEnabled = false;
 unsigned long recordStartTime = 0;
 unsigned long replayStartTime = 0;
 
+void updateActiveServos();
+void readButtons();
+bool buttonPressed(int index);
+void startRecording(int firstButton);
+void recordEvent(int buttonIndex);
+void startReplay();
+void replayEventsNonBlocking();
+
+
+
 // === SETUP ===
 void setup() {
 
@@ -100,7 +110,7 @@ void loop() {
 
   switch (currentState) {
     case IDLE:
-      replaying = true;
+      replaying = false;
       if (idle == false){
         lcd.clear();
         lcd.setCursor(0,0);
@@ -157,6 +167,7 @@ void loop() {
       }
 
       if (buttonPressed(0)) {
+        delay(100);
         Serial.println("Recording stopped. Starting replay.");
         lcd.clear();
         lcd.setCursor(0,0);
@@ -178,17 +189,23 @@ void loop() {
       }
       
       replayEventsNonBlocking();
+      if (buttonPressed(0)) {
         lcd.clear();
         lcd.setCursor(0,0);
-        lcd.print("Replay complete");
+        lcd.print("Stopped Replay");
         lcd.setCursor(0,1);
-        lcd.print("Now idle");
+        lcd.print("System idle");
         delay(1000);
-      break;
+        currentState = IDLE;
+        break;
+    } 
+  
+    updateActiveServos();
+    }
   }
-  replaying = false;
-  updateActiveServos();
-}
+  
+
+
 
 // === BUTTON HANDLING ===
 void readButtons() {
@@ -248,9 +265,7 @@ void replayEventsNonBlocking() {
   bool allTriggered = true;
 
   for (int i = 0; i < eventCount; i++) {
-    if (buttonPressed(0)) {
-      break;
-    } 
+    
     if (!events[i].triggered && now >= events[i].timestamp) {
       int ch = events[i].buttonIndex;
       Serial.print("Turning servo ");
@@ -266,8 +281,20 @@ void replayEventsNonBlocking() {
 
   if (allTriggered) {
     Serial.println("==> Replay complete.");
+      lcd.clear();
+      lcd.setCursor(0,0);
+      lcd.print("Replay complete");
+      lcd.setCursor(0,1);
+      lcd.print("System idle");
+      delay(1000);
     if (loopingEnabled) {
       Serial.println("-- Looping replay...");
+      lcd.clear();
+      lcd.setCursor(0,0);
+      lcd.print("Loop is on");
+      lcd.setCursor(0,1);
+      lcd.print("Starting over");
+      delay(1000);
       replayStartTime = millis();
       for (int i = 0; i < eventCount; i++) {
         events[i].triggered = false;
@@ -310,4 +337,3 @@ void updateActiveServos() {
     }
   }
 }
-
