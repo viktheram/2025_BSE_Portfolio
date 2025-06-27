@@ -1,5 +1,5 @@
 # Marble Music Machine
-Last updated: Jun 27 09:57:51
+Last updated: Jun 27 09:59:03
 
 For full documentation visit [this](https://docs.google.com/document/d/19l-sdvGk2wv6FiNkObK4XHLtHroH8l88qlTdeSVrPsI/edit?tab=t.0#heading=h.u3em2oo7d9ti) google document. Because the github can be hard to navigate, this also includes direct links to everything I used - all my libraries, and direct links to each stage in my prototyping. But, if you don't want to do that, I've created one final release that will allow you to simply download everything you need for final assembly.
 
@@ -97,7 +97,7 @@ void loop() {
 | Micro Servos (20 Pack) | These are the servos that I controlled. | $31 | <a href="https://www.amazon.com/Smraza-Helicopter-Airplane-Control-Arduino/dp/B0F32WF12W?sr=8-10"> Link </a> |
 | IC2 16x12 LCD Display | The display that displayed what the arduino was doing | $9 | <a href="https://www.amazon.com/GeeekPi-Character-Backlight-Raspberry-Electrical/dp/B07S7PJYM6?sr=8-7"> Link </a> |
 | 5V Power Adapter 2 Pack | This is what gave power to the arduino and the shield | $10 | <a href="https://www.amazon.com/Power-Adapter-100-240V-Transformers-Supply/dp/B08722QC75?sr=8-3"> Link </a> |
-|**Generic Parts:**| Jumper wires, tools for construction (3D printer, filament, wire cutter, jumper wires (MM and MF)| | |
+|**Generic Parts:**| Jumper wires, tools for construction (e.g but not limited to 3D printer, filament, wire cutter, jumper wires (MM and MF))| | |
 
 
 **Milestone 2**
