@@ -1,5 +1,5 @@
 # Marble Music Machine
-Last updated: Jun 27 14:20:38
+Last updated: Jun 27 14:30:38
 <details>
  <summary>&#9656; Helpful Resources</summary>
  Other Resources/Examples
@@ -466,9 +466,6 @@ void loop() {
     }
   }
   
-
-
-
 // === BUTTON HANDLING ===
 void readButtons() {
   for (int i = 0; i < 17; i++) {
@@ -602,6 +599,3 @@ void updateActiveServos() {
     }
   }
 }
-</code>
-  </pre>
-</details>
