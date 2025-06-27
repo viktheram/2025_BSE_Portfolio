@@ -1,5 +1,5 @@
 # Marble Music Machine
-Last updated: Jun 27 13:20:25
+Last updated: Jun 27 13:24:35
 
 For full documentation visit [this](https://docs.google.com/document/d/19l-sdvGk2wv6FiNkObK4XHLtHroH8l88qlTdeSVrPsI/edit?tab=t.0#heading=h.u3em2oo7d9ti) google document. Because the github can be hard to navigate, this also includes direct links to everything I used - all my libraries, and direct links to each stage in my prototyping. But, if you don't want to do that, I've created one final release that will allow you to simply download everything you need for final assembly.
 
@@ -25,7 +25,7 @@ Code: My final code and a bit of my setup code.
 ![Headstone Image](logo.svg)
 
 # Starter Project – Retro Arcade Console
-<details>
+<&#9656; details>
   <summary>Starter Project – Retro Arcade Console</summary>
   <iframe width="875" height="400" src="https://www.youtube.com/embed/-vWqwQfv9GA?si=EgtACB9ZjJk6BhVi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
