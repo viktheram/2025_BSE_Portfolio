@@ -70,12 +70,128 @@ For your final milestone, explain the outcome of your project. Key details to in
 </div> 
 
 # Code
-<!-- Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. -->
+I have many editions of my code which you can find on my [github](https://github.com/viktheram/2025_BSE_Portfolio/tree/code). You may have to download libraries from the github. Below are the most important snippets of code which can help you setup the machine.
+
+<details>
+
+<summary>I2C_setup</summary>
+
+Setup code to find the baud rate of the display.
 
 ```c++
-//Might need some tweaks to some numbers
-//IMPORTANT SETUP COMMENT AT LINE 86
-//IMPORTANT ADJUSTMENT COMMENTA AT LINE 14&15
+#include <LiquidCrystal_I2C.h>
+// I2C address finding
+#include <Wire.h>
+
+void setup()
+{
+    //Initializing wire
+    Wire.begin();
+    //Initializing seraial monitor at the baudrate of 9600
+    Serial.begin(9600);
+}
+
+void loop()
+{
+    byte err, addr;
+    //Declaring variable to detect and count no. of I2C device found
+    int devices = 0;
+    
+    // For loop to try multiple combinations of Address
+    for (addr = 1; addr < 127; addr++) 
+    {
+        Wire.beginTransmission(addr);
+        err = Wire.endTransmission();
+
+        if (!err) 
+        {
+            Serial.print("Address 0x");
+            if (addr < 16)
+            {
+              Serial.print("0");
+            }
+            Serial.println(addr, HEX);
+            devices++;
+        }
+        else if (err == 4) 
+        {
+            Serial.print("Error at address 0x");
+            if (addr < 16)
+            {
+              Serial.print("0");
+            }
+            Serial.println(addr, HEX);
+        }
+    }
+    
+    //Exception, when there is no I2C device found
+    if (!devices)
+    {
+      Serial.println("Please connect your I2C device");
+    }
+    
+    //Waiting for 2 seconds
+    delay(2000);
+}
+
+```
+
+</details>
+
+<details>
+
+<summary>servo_dispense_setup</summary>
+
+This is the code for you to figure out the degrees that work the best for dispensing and accepting marbles
+
+```c++
+
+   #include <Wire.h>
+#include <Adafruit_PWMServoDriver.h>
+
+#define PWM_MIN 100
+#define PWM_MAX 500
+#define SERVO_CENTER_DEG 90
+#define SERVO_LEFT_DEG   75
+#define SERVO_RIGHT_DEG  100
+#define SERVO_CHANNEL    1    // Test
+#define SERVO_DELAY      3000 // ms to wait at each position
+
+Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
+
+int degreesToPWM(int deg) {
+  return map(deg, 0, 180, PWM_MIN, PWM_MAX);
+}
+
+void setup() {
+  Serial.begin(9600);
+  pwm.begin();
+  pwm.setPWMFreq(50); // Standard servo frequency
+  delay(10);
+}
+
+void loop() {
+  // Move to left (80°)
+  pwm.setPWM(SERVO_CHANNEL, 0, degreesToPWM(SERVO_LEFT_DEG));
+  Serial.println("Left");
+  delay(SERVO_DELAY);
+
+  // Move to right (100°)
+  pwm.setPWM(SERVO_CHANNEL, 0, degreesToPWM(SERVO_RIGHT_DEG));
+  Serial.println("Right");
+  delay(SERVO_DELAY);
+
+}
+```
+</details>
+
+<details>
+<summary>all_attached_04</summary>
+
+This is the 4th and final edition of my code. Put this into the arduino, and assuming you have all the libraries installed, and all the setup code finished, you should be good to go! At the top, I've linked all the files you'll need for the final project. Remember to save the code in the arduino folder.
+
+```c++
+   //IMPORTANT SETUP COMMENT AT LINE 84
 
 #include <LiquidCrystal_I2C.h>
 #include <Wire.h>
@@ -429,8 +545,9 @@ void updateActiveServos() {
     }
   }
 }
-}
 ```
+
+</details>
 
 **Milestone 1**
 
