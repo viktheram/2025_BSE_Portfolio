@@ -1,0 +1,36 @@
+#include <Wire.h>
+#include <Adafruit_PWMServoDriver.h>
+
+#define PWM_MIN 100
+#define PWM_MAX 500
+#define SERVO_CENTER_DEG 90
+#define SERVO_LEFT_DEG   75
+#define SERVO_RIGHT_DEG  100
+#define SERVO_CHANNEL    1    // Test
+#define SERVO_DELAY      3000 // ms to wait at each position
+
+Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
+
+int degreesToPWM(int deg) {
+  return map(deg, 0, 180, PWM_MIN, PWM_MAX);
+}
+
+void setup() {
+  Serial.begin(9600);
+  pwm.begin();
+  pwm.setPWMFreq(50); // Standard servo frequency
+  delay(10);
+}
+
+void loop() {
+  // Move to left (80°)
+  pwm.setPWM(SERVO_CHANNEL, 0, degreesToPWM(SERVO_LEFT_DEG));
+  Serial.println("Left");
+  delay(SERVO_DELAY);
+
+  // Move to right (100°)
+  pwm.setPWM(SERVO_CHANNEL, 0, degreesToPWM(SERVO_RIGHT_DEG));
+  Serial.println("Right");
+  delay(SERVO_DELAY);
+
+}
