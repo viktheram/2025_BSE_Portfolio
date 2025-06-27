@@ -26,7 +26,7 @@ Milestone 3: Design conveyor belt to move marbles back to the top for endless re
 
 I planned to build my project in two stages: The coding stage and the design and building stage. During the coding stage, I worked on programming the arduino to receive inputs from a button, and then replay it on a servo. I started with one buttton and one servo. The code was quite simple as I just needed to record one variable: the gap between the button presses. I used an array to store the values. The hardest part of this stage was setting up the servo shield. Because it didn't use the digital or analog pins on the arduino (but instead used channels), I needed to import libraries and set that up. It wasn't hard once I knew what to do, but the troubleshooting was quite annoying. 
 
-Below: My ver simple setup with just one servo and one button. I eventually merged the two together.
+Below: My very simple setup with just one servo and one button. I eventually merged the two together.
 <div style="text-align:left"><img src="one_button_servo.png" alt="front of the starter project" width="1500"/> </div>
 
 However, as I got more buzzers, I had to calculate and store more gaps. I needed more arrays, more wires, and more control over the servos. At the beginning, I just duplicated my code to be able to account for more buttons, and then control the respective servos. The servo shield was very helpful at this point. I thought I was done and was quite satisfied.
