@@ -1,5 +1,5 @@
 # Marble Music Machine
-Last updated: Jun 27 10:32:47
+Last updated: Jun 27 12:27:07
 
 For full documentation visit [this](https://docs.google.com/document/d/19l-sdvGk2wv6FiNkObK4XHLtHroH8l88qlTdeSVrPsI/edit?tab=t.0#heading=h.u3em2oo7d9ti) google document. Because the github can be hard to navigate, this also includes direct links to everything I used - all my libraries, and direct links to each stage in my prototyping. But, if you don't want to do that, I've created one final release that will allow you to simply download everything you need for final assembly.
 
@@ -70,17 +70,21 @@ For your final milestone, explain the outcome of your project. Key details to in
 </div> 
 
 # Code
-I have many editions of my code which you can find on my [github](https://github.com/viktheram/2025_BSE_Portfolio/tree/code). You may have to download libraries from the github. Below are the most important snippets of code which can help you setup the machine.
+<h1>Code</h1>
+<p>
+  I have many editions of my code which you can find on my 
+  <a href="https://github.com/viktheram/2025_BSE_Portfolio/tree/code" target="_blank">github</a>. 
+  You may have to download libraries from the github. Below are the most important snippets of code which can help you setup the machine.
+</p>
 
 <details>
-<summary>I2C_setup</summary>
+  <summary>I2C_setup</summary>
+  <p>Setup code to find the baud rate of the display.</p>
 
-Setup code to find the baud rate of the display.
-
-```c++
-#include <LiquidCrystal_I2C.h>
+  <pre><code class="language-cpp">
+#include &lt;LiquidCrystal_I2C.h&gt;
 // I2C address finding
-#include <Wire.h>
+#include &lt;Wire.h&gt;
 
 void setup()
 {
@@ -97,7 +101,7 @@ void loop()
     int devices = 0;
     
     // For loop to try multiple combinations of Address
-    for (addr = 1; addr < 127; addr++) 
+    for (addr = 1; addr &lt; 127; addr++) 
     {
         Wire.beginTransmission(addr);
         err = Wire.endTransmission();
@@ -105,7 +109,7 @@ void loop()
         if (!err) 
         {
             Serial.print("Address 0x");
-            if (addr < 16)
+            if (addr &lt; 16)
             {
               Serial.print("0");
             }
@@ -115,7 +119,7 @@ void loop()
         else if (err == 4) 
         {
             Serial.print("Error at address 0x");
-            if (addr < 16)
+            if (addr &lt; 16)
             {
               Serial.print("0");
             }
@@ -132,20 +136,16 @@ void loop()
     //Waiting for 2 seconds
     delay(2000);
 }
-
-```
+  </code></pre>
 </details>
 
 <details>
+  <summary>servo_dispense_setup</summary>
+  <p>This is the code for you to figure out the degrees that work the best for dispensing and accepting marbles.</p>
 
-<summary>servo_dispense_setup</summary>
-
-This is the code for you to figure out the degrees that work the best for dispensing and accepting marbles
-
-```c++
-
-   #include <Wire.h>
-#include <Adafruit_PWMServoDriver.h>
+  <pre><code class="language-cpp">
+#include &lt;Wire.h&gt;
+#include &lt;Adafruit_PWMServoDriver.h&gt;
 
 #define PWM_MIN 100
 #define PWM_MAX 500
@@ -178,18 +178,19 @@ void loop() {
   pwm.setPWM(SERVO_CHANNEL, 0, degreesToPWM(SERVO_RIGHT_DEG));
   Serial.println("Right");
   delay(SERVO_DELAY);
-
 }
-```
+  </code></pre>
 </details>
 
 <details>
-<summary>all_attached_04</summary>
+  <summary>all_attached_04</summary>
+  <p>
+    This is the 4th and final edition of my code. Put this into the Arduino, and assuming you have all the libraries installed and all the setup code finished, you should be good to go! At the top, I've linked all the files you'll need for the final project. Remember to save the code in the Arduino folder.
+  </p>
 
-This is the 4th and final edition of my code. Put this into the arduino, and assuming you have all the libraries installed, and all the setup code finished, you should be good to go! At the top, I've linked all the files you'll need for the final project. Remember to save the code in the arduino folder.
-
-```c++
-   //IMPORTANT SETUP COMMENT AT LINE 84
+  <pre><code class="language-cpp">//Might need some tweaks to some numbers
+//IMPORTANT SETUP COMMENT AT LINE 86
+//IMPORTANT ADJUSTMENT COMMENTA AT LINE 14&15
 
 #include <LiquidCrystal_I2C.h>
 #include <Wire.h>
@@ -543,7 +544,7 @@ void updateActiveServos() {
     }
   }
 }
-```
+  </code></pre>
 </details>
 
 # Bill of Materials
