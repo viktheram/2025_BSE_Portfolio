@@ -1,5 +1,5 @@
 # Marble Music Machine
-Last updated: Jun 27 13:52:56
+Last updated: Jun 27 13:54:56
 
 For full documentation visit [this](https://docs.google.com/document/d/19l-sdvGk2wv6FiNkObK4XHLtHroH8l88qlTdeSVrPsI/edit?tab=t.0#heading=h.u3em2oo7d9ti) google document. Because the github can be hard to navigate, this also includes direct links to everything I used - all my libraries, and direct links to each stage in my prototyping. But, if you don't want to do that, I've created one final release that will allow you to simply download everything you need for final assembly.
 
@@ -232,7 +232,8 @@ void loop() {
     This is the 4th and final edition of my code. Put this into the Arduino, and assuming you have all the libraries installed and all the setup code finished, you should be good to go! At the top, I've linked all the files you'll need for the final project. Remember to save the code in the Arduino folder.
   </p>
 
-  <pre><code class="language-cpp">//Might need some tweaks to some numbers
+  <pre><code class="language-cpp">
+//Might need some tweaks to some numbers
 //IMPORTANT SETUP COMMENT AT LINE 86
 //IMPORTANT ADJUSTMENT COMMENTA AT LINE 14&15
 
@@ -590,10 +591,11 @@ void updateActiveServos() {
 }
   </code></pre>
 </details>
+
 <details>
-  <summary>Other Resources/Examples</summary>
- #&#9656;Other Resources/Examples
-<!-- One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
+ <summary>#&#9656; Other Resources/Examples</summary>
+ Other Resources/Examples
+ <p>One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
 - [Example 1](https://trashytuber.github.io/YimingJiaBlueStamp/)
 - [Example 2](https://sviatil0.github.io/Sviatoslav_BSE/)
 - [Example 3](https://arneshkumar.github.io/arneshbluestamp/) -->
