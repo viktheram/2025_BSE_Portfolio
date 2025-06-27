@@ -1,18 +1,18 @@
 # Marble Music Machine
-Last updated: Jun 27 13:28:25
+Last updated: Jun 27 13:34:56
 
 For full documentation visit [this](https://docs.google.com/document/d/19l-sdvGk2wv6FiNkObK4XHLtHroH8l88qlTdeSVrPsI/edit?tab=t.0#heading=h.u3em2oo7d9ti) google document. Because the github can be hard to navigate, this also includes direct links to everything I used - all my libraries, and direct links to each stage in my prototyping. But, if you don't want to do that, I've created one final release that will allow you to simply download everything you need for final assembly.
 
 This is a music machine that replays the notes you input by dropping marbles onto a Xylophone! Rather than playing directly on the xylophone, you pre-program notes by pushing buttons. After you are done, you press the stop button twice (once to stop and once to start playing) then watch as balls are sent bouncing off the keys of the xylophone. This will loop forever because of the ball lift on the side!
  
-Contents:
-<p style="color: red;">Starter Project: </p>The project I did before I started my intensive project
-<p style="color: orange;">Milestone 1: </p>Program button interface to record and store notes.
-<p style="color: green;">Milestone 2: </p>Design method for dropping balls onto the xylophone. Design method to control where the balls drop to (to drop on different notes).
-<p style="color: blue;">Milestone 3:</p>Design conveyor belt to move marbles back to the top for endless replaying!
-Bill of Materials: All the materials I used
-Schematics: An schematic of how I wired my wires
-Code: My final code and a bit of my setup code.
+### Contents:
+<b>Starter Project:</b> The project I did before I started my intensive project<br>
+<b>Milestone 1:</b> Program button interface to record and store notes.<br>
+<b>Milestone 2:</b> Design method for dropping balls onto the xylophone. Design method to control where the balls drop to (to drop on different notes).<br>
+<b>Milestone 3:</b> Design conveyor belt to move marbles back to the top for endless replaying!<br>
+<b>Bill of Materials:</b> All the materials I used<br>
+<b>Schematics:</b> An schematic of how I wired my wires<br>
+<b>Code:</b> My final code and a bit of my setup code.<br>
 
 | **Name** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
