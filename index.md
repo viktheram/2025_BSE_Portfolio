@@ -73,7 +73,6 @@ For your final milestone, explain the outcome of your project. Key details to in
 I have many editions of my code which you can find on my [github](https://github.com/viktheram/2025_BSE_Portfolio/tree/code). You may have to download libraries from the github. Below are the most important snippets of code which can help you setup the machine.
 
 <details>
-
 <summary>I2C_setup</summary>
 
 Setup code to find the baud rate of the display.
@@ -135,7 +134,6 @@ void loop()
 }
 
 ```
-
 </details>
 
 <details>
@@ -546,7 +544,6 @@ void updateActiveServos() {
   }
 }
 ```
-
 </details>
 
 # Bill of Materials
