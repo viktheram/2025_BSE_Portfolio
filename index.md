@@ -1,5 +1,5 @@
 # Marble Music Machine
-Last updated: Jun 27 14:02:52
+Last updated: Jun 27 14:07:13
 
 For full documentation visit [this](https://docs.google.com/document/d/19l-sdvGk2wv6FiNkObK4XHLtHroH8l88qlTdeSVrPsI/edit?tab=t.0#heading=h.u3em2oo7d9ti) google document. Because the github can be hard to navigate, this also includes direct links to everything I used - all my libraries, and direct links to each stage in my prototyping. But, if you don't want to do that, I've created one final release that will allow you to simply download everything you need for final assembly.
 
@@ -125,7 +125,7 @@ For your final milestone, explain the outcome of your project. Key details to in
   <summary><strong>&#9656; I2C_setup</strong></summary>
   <p>Setup code to find the baud rate of the display.</p>
 
-  <pre><code class="language-cpp">
+  <pre><code class="language-c++">
 #include &lt;LiquidCrystal_I2C.h&gt;
 // I2C address finding
 #include &lt;Wire.h&gt;
@@ -187,7 +187,7 @@ void loop()
    <summary><strong>&#9656; servo_dispense_setup</strong></summary>
   <p>This is the code for you to figure out the degrees that work the best for dispensing and accepting marbles.</p>
 
-  <pre><code class="language-cpp">
+  <pre><code class="language-c++">
 #include &lt;Wire.h&gt;
 #include &lt;Adafruit_PWMServoDriver.h&gt;
 
@@ -232,7 +232,7 @@ void loop() {
     This is the 4th and final edition of my code. Put this into the Arduino, and assuming you have all the libraries installed and all the setup code finished, you should be good to go! At the top, I've linked all the files you'll need for the final project. Remember to save the code in the Arduino folder.
   </p>
 
-  <pre><code class="language-cpp">
+  ```c++
 //Might need some tweaks to some numbers
 //IMPORTANT SETUP COMMENT AT LINE 86
 //IMPORTANT ADJUSTMENT COMMENTA AT LINE 14&15
@@ -589,7 +589,7 @@ void updateActiveServos() {
     }
   }
 }
-  </code></pre>
+'''
 </details>
 
 <details>
