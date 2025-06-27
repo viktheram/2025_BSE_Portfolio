@@ -77,7 +77,7 @@ For your final milestone, explain the outcome of your project. Key details to in
 </p>
 
 <details>
-  <summary><strong>&bull; I2C_setup</strong></summary>
+  <summary><strong>&#9656; I2C_setup</strong></summary>
   <p>Setup code to find the baud rate of the display.</p>
 
   <pre><code class="language-cpp">
@@ -139,7 +139,7 @@ void loop()
 </details>
 
 <details>
-   <summary><strong>&bull; servo_dispense_setup</strong></summary>
+   <summary><strong>&#9656; servo_dispense_setup</strong></summary>
   <p>This is the code for you to figure out the degrees that work the best for dispensing and accepting marbles.</p>
 
   <pre><code class="language-cpp">
@@ -182,7 +182,7 @@ void loop() {
 </details>
 
 <details>
-   <summary><strong>&bull; I2C_setup</strong></summary>
+   <summary><strong>&#9656; all_attached_04</strong></summary>
   <p>
     This is the 4th and final edition of my code. Put this into the Arduino, and assuming you have all the libraries installed and all the setup code finished, you should be good to go! At the top, I've linked all the files you'll need for the final project. Remember to save the code in the Arduino folder.
   </p>
