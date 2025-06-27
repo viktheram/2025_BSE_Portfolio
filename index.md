@@ -1,5 +1,5 @@
 # Marble Music Machine
-Last updated: Jun 27 12:27:07
+Last updated: Jun 27 13:01:31
 
 For full documentation visit [this](https://docs.google.com/document/d/19l-sdvGk2wv6FiNkObK4XHLtHroH8l88qlTdeSVrPsI/edit?tab=t.0#heading=h.u3em2oo7d9ti) google document. Because the github can be hard to navigate, this also includes direct links to everything I used - all my libraries, and direct links to each stage in my prototyping. But, if you don't want to do that, I've created one final release that will allow you to simply download everything you need for final assembly.
 
@@ -70,7 +70,6 @@ For your final milestone, explain the outcome of your project. Key details to in
 </div> 
 
 # Code
-<h1>Code</h1>
 <p>
   I have many editions of my code which you can find on my 
   <a href="https://github.com/viktheram/2025_BSE_Portfolio/tree/code" target="_blank">github</a>. 
@@ -78,7 +77,7 @@ For your final milestone, explain the outcome of your project. Key details to in
 </p>
 
 <details>
-  <strong>&bull; I2C_setup</strong>
+  <summary><strong>&bull; I2C_setup</strong></summary>
   <p>Setup code to find the baud rate of the display.</p>
 
   <pre><code class="language-cpp">
@@ -140,7 +139,7 @@ void loop()
 </details>
 
 <details>
-  <strong>&bull; servo_dispense_setup</strong>
+   <summary><strong>&bull; servo_dispense_setup</strong></summary>
   <p>This is the code for you to figure out the degrees that work the best for dispensing and accepting marbles.</p>
 
   <pre><code class="language-cpp">
@@ -183,7 +182,7 @@ void loop() {
 </details>
 
 <details>
-  <strong>&bull; all_attached_04</strong>
+   <summary><strong>&bull; I2C_setup</strong></summary>
   <p>
     This is the 4th and final edition of my code. Put this into the Arduino, and assuming you have all the libraries installed and all the setup code finished, you should be good to go! At the top, I've linked all the files you'll need for the final project. Remember to save the code in the Arduino folder.
   </p>
