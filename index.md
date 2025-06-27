@@ -1,15 +1,19 @@
 # Marble Music Machine
-Last updated: Jun 27 13:09:25
+Last updated: Jun 27 13:20:25
 
 For full documentation visit [this](https://docs.google.com/document/d/19l-sdvGk2wv6FiNkObK4XHLtHroH8l88qlTdeSVrPsI/edit?tab=t.0#heading=h.u3em2oo7d9ti) google document. Because the github can be hard to navigate, this also includes direct links to everything I used - all my libraries, and direct links to each stage in my prototyping. But, if you don't want to do that, I've created one final release that will allow you to simply download everything you need for final assembly.
 
 This is a music machine that replays the notes you input by dropping marbles onto a Xylophone! Rather than playing directly on the xylophone, you pre-program notes by pushing buttons. After you are done, you press the stop button twice (once to stop and once to start playing) then watch as balls are sent bouncing off the keys of the xylophone. This will loop forever because of the ball lift on the side!
 
 ```HTML 
-Milestones:
+Contents:
+Starter Project: The project I did before I started my intensive project
 Milestone 1: Program button interface to record and store notes.
 Milestone 2: Design method for dropping balls onto the xylophone. Design method to control where the balls drop to (to drop on different notes).
 Milestone 3: Design conveyor belt to move marbles back to the top for endless replaying!
+Bill of Materials: All the materials I used
+Schematics: An schematic of how I wired my wires
+Code: My final code and a bit of my setup code.
 ```
 
 | **Name** | **School** | **Area of Interest** | **Grade** |
@@ -19,7 +23,21 @@ Milestone 3: Design conveyor belt to move marbles back to the top for endless re
 **Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.**
 
 ![Headstone Image](logo.svg)
-  
+
+# Starter Project – Retro Arcade Console
+<details>
+  <summary>Starter Project – Retro Arcade Console</summary>
+  <iframe width="875" height="400" src="https://www.youtube.com/embed/-vWqwQfv9GA?si=EgtACB9ZjJk6BhVi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+  This console has multiple games on like Snake and Tetris. The parts and code were preloaded and all I needed to do was solder different pieces to the main PCB. It can be powered thorugh a mini-USB port or 3AAA batteries.
+
+  <div style="text-align:left"><img src="starter_1_2.png" alt="front of the starter project" width="1500"/> </div>
+
+  This gave me a great way to practice my soldering skills as there were many points I had to solder together. The most challenging part of soldering each contraption while keeping them in place and alligned. The pins were also extremely close together, and I had never had to solder with this much precision before. Attaching the battery was also difficult as I decided to shorten the wire. This meant that I needed to cut the while and re-solder it together. Because I had already attached the wires to the PCB and the battery, soldering them back together was very difficult as I had to position them between the battery and the PCB. I had very little room. However, it turned out great and all the components work!
+
+</details>
+
+
 # First Milestone
 
 <iframe width="875" height="400" src="https://www.youtube.com/embed/KsqplpovlIQ?si=DtapKUqWkmuTwKQ9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -63,6 +81,35 @@ For your final milestone, explain the outcome of your project. Key details to in
 - What your biggest challenges and triumphs were at BSE
 - A summary of key topics you learned about
 - What you hope to learn in the future after everything you've learned at BSE -->
+
+# Bill of Materials
+
+**Milestone 1**
+
+| **Part** | **Note** | **Price** | **Link** |
+|:--:|:--:|:--:|:--:|
+| Arduino Mega 2560 | The brains of the entire operation. | $22 | <a href="https://www.amazon.com/ELEGOO-ATmega2560-ATMEGA16U2-Arduino-Compliant/dp/B01H4ZLZLQ?sr=8-3"> Link </a> |
+| Keyestudio 16x12 Servo Shield | To attach servos | $15 | <a href="https://www.amazon.com/KEYESTUDIO-16-Channel-12-bit-Shield-Arduino/dp/B0D3L85YQL?sr=8-1"> Link </a> |
+| SANWA 30mm Arcade Buttons (8 Pack White)| These are the buttons I used to program the servos. | $24 (x2) | <a href="https://www.amazon.com/White-Sanwa-Push-Buttons-OBSF-30-W/dp/B003KSB2YC"> Link </a> |
+| SANWA 30mm ARcade Buttons (2 Pack Black)| I used 17 buttons. 15 white ones are the keys, these two black ones are the start/stop button and the continuous playback button. | $12 | <a href="https://www.amazon.com/OBSF-30-Arcade-Tournament-Joystick-Compatible/dp/B005BZ10EY"> Link </a> |
+| Micro Servos (20 Pack) | These are the servos that I controlled. | $31 | <a href="https://www.amazon.com/Smraza-Helicopter-Airplane-Control-Arduino/dp/B0F32WF12W?sr=8-10"> Link </a> |
+| IC2 16x12 LCD Display | The display that displayed what the arduino was doing | $9 | <a href="https://www.amazon.com/GeeekPi-Character-Backlight-Raspberry-Electrical/dp/B07S7PJYM6?sr=8-7"> Link </a> |
+| 5V Power Adapter 2 Pack | This is what gave power to the arduino and the shield | $10 | <a href="https://www.amazon.com/Power-Adapter-100-240V-Transformers-Supply/dp/B08722QC75?sr=8-3"> Link </a> |
+|**Generic Parts:**| Jumper wires, tools for construction (e.g but not limited to 3D printer, filament, wire cutter, jumper wires (MM and MF))| | |
+
+
+**Milestone 2**
+
+| **Part** | **Note** | **Price** | **Link** |
+|:--:|:--:|:--:|:--:|
+| Acrylic 1mm 11x17 Acrylic (4 Pack)| This is the acrylic I used to create the walls for the marble chute. (After the dispenser mechanism)| $17 | <a href="https://www.amazon.com/ELEGOO-ATmega2560-ATMEGA16U2-Arduino-Compliant/dp/B01H4ZLZLQ?sr=8-3"> Link </a> |
+| Acrylic 3mm 12x24 Acrylic (2 Pack) | This is the acrylic I used as the baseplate for my marble storage section. (Before the dispenser mechanism)| $24 | <a href="https://www.amazon.com/2-Pack-Clear-Acrylic-Sheet-Plexiglass/dp/B0899QVSY1?sr=8-3"> Link </a> |
+| Balsa Rods | These are the balsa poles I used throughout my project to hold up things (like my button holder) | $15 | <a href="https://www.amazon.com/Calvana-12-Unfinished-Straight-Hardwood/dp/B09TKT51D7?sr=8-2"> Link </a> |
+| Balsa Sheets | 12x12x1/8 These are the sheets I used to make dividers and hold my buttons | $15 | <a href="https://www.amazon.com/DIYDEC-Basswood-Plywood-Unfinished-Architectural/dp/B0CYPL3729?sr=8-2"> Link </a> |
+| Timing Belt Pulley | This is the wheel that connects to the belt that will lift the marbles back up | $6 | <a href="https://www.amazon.com/WINSINN-Aluminum-Synchronous-Timing-Printer/dp/B07CXSSGF8/ref%5B%25E2%2580%25A6%5D=b61ec422-dde5-4ccc-a123-a7d85c621f51&pd_rd_i=B077GNZK3J&th=1"> Link </a> |
+| Timing Belt | This is the belt that attaches to the wheel above. | $13 | <a href="https://www.amazon.com/WINSINN-Aluminum-Synchronous-Timing-Printer/dp/B07CXSSGF8/ref%5B%25E2%2580%25A6%5D=b61ec422-dde5-4ccc-a123-a7d85c621f51&pd_rd_i=B077GNZK3J&th=1"> Link </a> |
+| Sandpaper Loop | This is the loop that the timing belt will attach to (for more width and stability) | $$ | Link |
+| Flange Coupling Connector | This will connect the servo to a dowel (we will 3D print) that will span the width of the sandpaper | $8 | <a href="https://www.amazon.com/Coupling-Connector-Coupler-Accessory-Fittings/dp/B08334MFVT/r%5B%25E2%2580%25A6%5D020fce7c-0cb7-4eb5-a21e-ebdf8143c417&pd_rd_i=B08334MFVT&psc=1"> Link </a> |
 
 # Schematics 
 <div style="position: relative; width: 100%; padding-top: calc(max(56.25%, 400px));">
@@ -546,35 +593,6 @@ void updateActiveServos() {
   </code></pre>
 </details>
 
-# Bill of Materials
-
-**Milestone 1**
-
-| **Part** | **Note** | **Price** | **Link** |
-|:--:|:--:|:--:|:--:|
-| Arduino Mega 2560 | The brains of the entire operation. | $22 | <a href="https://www.amazon.com/ELEGOO-ATmega2560-ATMEGA16U2-Arduino-Compliant/dp/B01H4ZLZLQ?sr=8-3"> Link </a> |
-| Keyestudio 16x12 Servo Shield | To attach servos | $15 | <a href="https://www.amazon.com/KEYESTUDIO-16-Channel-12-bit-Shield-Arduino/dp/B0D3L85YQL?sr=8-1"> Link </a> |
-| SANWA 30mm Arcade Buttons (8 Pack White)| These are the buttons I used to program the servos. | $24 (x2) | <a href="https://www.amazon.com/White-Sanwa-Push-Buttons-OBSF-30-W/dp/B003KSB2YC"> Link </a> |
-| SANWA 30mm ARcade Buttons (2 Pack Black)| I used 17 buttons. 15 white ones are the keys, these two black ones are the start/stop button and the continuous playback button. | $12 | <a href="https://www.amazon.com/OBSF-30-Arcade-Tournament-Joystick-Compatible/dp/B005BZ10EY"> Link </a> |
-| Micro Servos (20 Pack) | These are the servos that I controlled. | $31 | <a href="https://www.amazon.com/Smraza-Helicopter-Airplane-Control-Arduino/dp/B0F32WF12W?sr=8-10"> Link </a> |
-| IC2 16x12 LCD Display | The display that displayed what the arduino was doing | $9 | <a href="https://www.amazon.com/GeeekPi-Character-Backlight-Raspberry-Electrical/dp/B07S7PJYM6?sr=8-7"> Link </a> |
-| 5V Power Adapter 2 Pack | This is what gave power to the arduino and the shield | $10 | <a href="https://www.amazon.com/Power-Adapter-100-240V-Transformers-Supply/dp/B08722QC75?sr=8-3"> Link </a> |
-|**Generic Parts:**| Jumper wires, tools for construction (e.g but not limited to 3D printer, filament, wire cutter, jumper wires (MM and MF))| | |
-
-
-**Milestone 2**
-
-| **Part** | **Note** | **Price** | **Link** |
-|:--:|:--:|:--:|:--:|
-| Acrylic 1mm 11x17 Acrylic (4 Pack)| This is the acrylic I used to create the walls for the marble chute. (After the dispenser mechanism)| $17 | <a href="https://www.amazon.com/ELEGOO-ATmega2560-ATMEGA16U2-Arduino-Compliant/dp/B01H4ZLZLQ?sr=8-3"> Link </a> |
-| Acrylic 3mm 12x24 Acrylic (2 Pack) | This is the acrylic I used as the baseplate for my marble storage section. (Before the dispenser mechanism)| $24 | <a href="https://www.amazon.com/2-Pack-Clear-Acrylic-Sheet-Plexiglass/dp/B0899QVSY1?sr=8-3"> Link </a> |
-| Balsa Rods | These are the balsa poles I used throughout my project to hold up things (like my button holder) | $15 | <a href="https://www.amazon.com/Calvana-12-Unfinished-Straight-Hardwood/dp/B09TKT51D7?sr=8-2"> Link </a> |
-| Balsa Sheets | 12x12x1/8 These are the sheets I used to make dividers and hold my buttons | $15 | <a href="https://www.amazon.com/DIYDEC-Basswood-Plywood-Unfinished-Architectural/dp/B0CYPL3729?sr=8-2"> Link </a> |
-| Timing Belt Pulley | This is the wheel that connects to the belt that will lift the marbles back up | $6 | <a href="https://www.amazon.com/WINSINN-Aluminum-Synchronous-Timing-Printer/dp/B07CXSSGF8/ref%5B%25E2%2580%25A6%5D=b61ec422-dde5-4ccc-a123-a7d85c621f51&pd_rd_i=B077GNZK3J&th=1"> Link </a> |
-| Timing Belt | This is the belt that attaches to the wheel above. | $13 | <a href="https://www.amazon.com/WINSINN-Aluminum-Synchronous-Timing-Printer/dp/B07CXSSGF8/ref%5B%25E2%2580%25A6%5D=b61ec422-dde5-4ccc-a123-a7d85c621f51&pd_rd_i=B077GNZK3J&th=1"> Link </a> |
-| Sandpaper Loop | This is the loop that the timing belt will attach to (for more width and stability) | $$ | Link |
-| Flange Coupling Connector | This will connect the servo to a dowel (we will 3D print) that will span the width of the sandpaper | $8 | <a href="https://www.amazon.com/Coupling-Connector-Coupler-Accessory-Fittings/dp/B08334MFVT/r%5B%25E2%2580%25A6%5D020fce7c-0cb7-4eb5-a21e-ebdf8143c417&pd_rd_i=B08334MFVT&psc=1"> Link </a> |
-
 # Other Resources/Examples
 <!-- One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
 - [Example 1](https://trashytuber.github.io/YimingJiaBlueStamp/)
@@ -582,13 +600,3 @@ void updateActiveServos() {
 - [Example 3](https://arneshkumar.github.io/arneshbluestamp/) -->
 
 To watch the BSE tutorial on how to create a portfolio, click here.
-
-# Starter Project – Retro Arcade Console
-<iframe width="875" height="400" src="https://www.youtube.com/embed/-vWqwQfv9GA?si=EgtACB9ZjJk6BhVi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-This console has multiple games on like Snake and Tetris. The parts and code were preloaded and all I needed to do was solder different pieces to the main PCB. It can be powered thorugh a mini-USB port or 3AAA batteries.
-
-<div style="text-align:left"><img src="starter_1_2.png" alt="front of the starter project" width="1500"/> </div>
-
-This gave me a great way to practice my soldering skills as there were many points I had to solder together. The most challenging part of soldering each contraption while keeping them in place and alligned. The pins were also extremely close together, and I had never had to solder with this much precision before. Attaching the battery was also difficult as I decided to shorten the wire. This meant that I needed to cut the while and re-solder it together. Because I had already attached the wires to the PCB and the battery, soldering them back together was very difficult as I had to position them between the battery and the PCB. I had very little room. However, it turned out great and all the components work!
-
