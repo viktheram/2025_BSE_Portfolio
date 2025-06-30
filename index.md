@@ -1,5 +1,5 @@
 # Marble Music Machine
-Last updated: Jun 27 14:30:38
+Last updated: Jun 30 11:28:30
 <details>
  <summary>&#9656; Helpful Resources</summary>
  Other Resources/Examples
@@ -117,7 +117,7 @@ For your final milestone, explain the outcome of your project. Key details to in
 | Acrylic 3mm 12x24 Acrylic (2 Pack) | This is the acrylic I used as the baseplate for my marble storage section. (Before the dispenser mechanism)| $24 | <a href="https://www.amazon.com/2-Pack-Clear-Acrylic-Sheet-Plexiglass/dp/B0899QVSY1?sr=8-3"> Link </a> |
 | Balsa Rods | These are the balsa poles I used throughout my project to hold up things (like my button holder) | $15 | <a href="https://www.amazon.com/Calvana-12-Unfinished-Straight-Hardwood/dp/B09TKT51D7?sr=8-2"> Link </a> |
 | Balsa Sheets | 12x12x1/8 These are the sheets I used to make dividers and hold my buttons | $15 | <a href="https://www.amazon.com/DIYDEC-Basswood-Plywood-Unfinished-Architectural/dp/B0CYPL3729?sr=8-2"> Link </a> |
-| Timing Belt Pulley | This is the wheel that connects to the belt that will lift the marbles back up | $6 | <a href="https://www.amazon.com/WINSINN-Aluminum-Synchronous-Timing-Printer/dp/B07CXSSGF8/ref%5B%25E2%2580%25A6%5D=b61ec422-dde5-4ccc-a123-a7d85c621f51&pd_rd_i=B077GNZK3J&th=1"> Link </a> |
+| Timing Belt Pulley | This is the wheel that connects to the belt that will lift the marbles back up | $6 | <a href="https://www.amazon.com/WINSINN-Aluminum-Synchronous-Timing-Printer/dp/B077GNZK3J/ref%5B%25E2%2580%25A6%5D=b61ec422-dde5-4ccc-a123-a7d85c621f51&pd_rd_i=B077GNZK3J&th=1"> Link </a> |
 | Timing Belt | This is the belt that attaches to the wheel above. | $13 | <a href="https://www.amazon.com/WINSINN-Aluminum-Synchronous-Timing-Printer/dp/B07CXSSGF8/ref%5B%25E2%2580%25A6%5D=b61ec422-dde5-4ccc-a123-a7d85c621f51&pd_rd_i=B077GNZK3J&th=1"> Link </a> |
 | Sandpaper Loop | This is the loop that the timing belt will attach to (for more width and stability) | $$ | Link |
 | Flange Coupling Connector | This will connect the servo to a dowel (we will 3D print) that will span the width of the sandpaper | $8 | <a href="https://www.amazon.com/Coupling-Connector-Coupler-Accessory-Fittings/dp/B08334MFVT/r%5B%25E2%2580%25A6%5D020fce7c-0cb7-4eb5-a21e-ebdf8143c417&pd_rd_i=B08334MFVT&psc=1"> Link </a> |
