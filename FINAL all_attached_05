@@ -1,0 +1,358 @@
+//FINAL CODE
+//Might need some tweaks to some numbers
+//IMPORTANT SETUP COMMENT AT LINE 92
+//IMPORTANT ADJUSTMENT COMMENA AT LINE 15&16
+
+#include <LiquidCrystal_I2C.h>
+#include <Wire.h>
+#include <Adafruit_PWMServoDriver.h>
+
+// === CONFIGURATION MACROS ===
+#define MAX_EVENTS 50
+#define PWM_MIN 100
+#define PWM_MAX 500
+#define SERVO_CENTER_DEG 90
+#define SERVO_LEFT_DEG 75 //You may have to adjust SERVO_LEFT to a lower number if marbles are not dispensing properly (default: 75)
+#define SERVO_RIGHT_DEG 130 //You may have to adjust SERVO_RIGHT to a higher number if marbles are not entering the dispenser properly (default: 100)
+#define SERVO_MOVE_DURATION 150
+bool recording = false;
+bool replaying = false;
+bool idle = false;
+
+// === HARDWARE SETUP ===
+const int buttonPins[17] = {
+  22, 24, 26, 28, 30, 32, 34, 36,
+  38, 40, 42, 44, 46, 48, 50, 52, 53
+};
+LiquidCrystal_I2C lcd(0x27, 16, 2); // Format -> (Address,Width,Height )
+
+Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
+
+// === EVENT & SERVO STATE ===
+struct PressEvent {
+  byte buttonIndex;
+  unsigned long timestamp;  // ms since recording started
+  bool triggered;
+};
+
+PressEvent events[MAX_EVENTS];
+int eventCount = 0;
+
+struct ActiveServo {
+  int channel;
+  unsigned long phaseStart;
+  int phase; // 0=start, 1=return, 2=done
+  bool active;
+};
+
+#define MAX_ACTIVE_SERVOS 16
+ActiveServo activeServos[MAX_ACTIVE_SERVOS];
+
+// === SYSTEM STATE ===
+enum SystemState { IDLE, ARMED, RECORDING, REPLAYING };
+SystemState currentState = IDLE;
+
+bool buttonStates[17] = {0};
+bool lastButtonStates[17] = {0};
+
+bool loopingEnabled = false;
+unsigned long recordStartTime = 0;
+unsigned long replayStartTime = 0;
+
+void updateActiveServos();
+void readButtons();
+bool buttonPressed(int index);
+void startRecording(int firstButton);
+void recordEvent(int buttonIndex);
+void startReplay();
+void replayEventsNonBlocking();
+
+int degreesToPWM(int deg) {
+  return map(deg, 0, 180, PWM_MIN, PWM_MAX);
+}
+
+// === SETUP ===
+void setup() {
+
+  updateActiveServos();
+  Serial.begin(9600);
+  pwm.begin();
+  pwm.setPWMFreq(50);
+
+  for (int i = 0; i < 17; i++) {
+    pinMode(buttonPins[i], INPUT);
+  }
+
+  for (int ch = 1; ch <= 15; ch++) {
+    pwm.setPWM(ch, 0, degreesToPWM(SERVO_LEFT_DEG)); // Set all servos to right at startup
+  }
+//WHEN YOU FIRST START UP THE PROGRAM AND YOUR SERVOS
+//SET (SERVO_LEFT_DEG) to (SERVO_CENTER_DEGREE)
+//THAT WAY YOU CAN ENSURE YOUR DISPENSERS ARE CENTERED
+//Once your dispensers are centerd, change it back to SERVO_LEFT_DEG
+//DO THE SAME AT LINE 124
+
+  // initialize the lcd
+  lcd.init();
+  // Turn on the Backlight
+  lcd.backlight();
+  //Clear LED
+  lcd.clear();
+
+  currentState = IDLE;
+}
+
+// === MAIN LOOP ===
+void loop() {
+  readButtons();
+
+  // Toggle looping
+  if (buttonPressed(16)) { 
+    loopingEnabled = !loopingEnabled;
+    Serial.print("Looping playback is now ");
+    Serial.println(loopingEnabled ? "ENABLED" : "DISABLED");
+    lcd.clear();
+    lcd.setCursor(0,0);
+    lcd.print("Infinite Loop:");
+    lcd.setCursor(1,0);
+    lcd.print(loopingEnabled ? "ENABLED" : "DISABLED");
+    delay(200);
+  }
+
+  switch (currentState) {
+    case IDLE:
+      for (int ch = 1; ch <= 15; ch++) {
+      pwm.setPWM(ch, 0, degreesToPWM(SERVO_LEFT_DEG)); //See comment on variable
+    }
+      
+      replaying = false;
+      if (idle == false){
+        lcd.clear();
+        lcd.setCursor(0,0);
+        lcd.print("Welcome!");
+        lcd.setCursor(0,1);
+        lcd.print("Press S to start");
+        idle = true;
+      }
+      if (buttonPressed(0)) {
+        Serial.println("Started. Press any button 1-15 to begin.");
+        lcd.clear();
+        lcd.setCursor(0,0);
+        lcd.print("Started");
+        lcd.setCursor(0,1);
+        lcd.print("Ready to record");
+        idle = false;
+        currentState = ARMED;
+      }
+      break;
+
+    case ARMED:
+      for (int i = 1; i <= 15; i++) {
+        if (buttonPressed(i)) {
+          startRecording(i);
+          break;
+        }
+      }
+      break;
+
+    case RECORDING:
+      if (recording == false){
+        recording = true;
+        lcd.clear();
+        lcd.setCursor(0,0);
+        lcd.print("Now recording");
+        lcd.setCursor(0,1);
+        lcd.print("Press S to stop");
+      }
+        
+      for (int i = 1; i <= 15; i++) {
+        if (buttonPressed(i)) {
+          recordEvent(i);
+        }
+      }
+
+      if (eventCount == MAX_EVENTS) {
+        Serial.println("Max notes reached. Starting replay.");
+        lcd.clear();
+        lcd.setCursor(0,0);
+        lcd.print("Note limit reached");
+        lcd.setCursor(0,1);
+        lcd.print("Starting replay");
+        startReplay();
+      }
+
+      if (buttonPressed(0)) {
+        delay(100);
+        Serial.println("Recording stopped. Starting replay.");
+        lcd.clear();
+        lcd.setCursor(0,0);
+        lcd.print("Recording ended");
+        lcd.setCursor(0,1);
+        lcd.print("Starting replay");
+        startReplay();
+      }
+      break;
+
+    case REPLAYING:
+      recording = false;
+      if (replaying == false){
+        replaying = true;
+        lcd.clear();
+        lcd.setCursor(0,0);
+        lcd.print("Now replaying");
+        lcd.setCursor(0,1);
+        lcd.print("Press S to stop");
+      }
+      
+      replayEventsNonBlocking();
+      if (buttonPressed(0)) {
+        lcd.clear();
+        lcd.setCursor(0,0);
+        lcd.print("Stopped Replay");
+        lcd.setCursor(0,1);
+        lcd.print("System idle");
+        delay(3000);
+        currentState = IDLE;
+        break;
+    } 
+  
+    updateActiveServos();
+    }
+  }
+  
+
+
+
+// === BUTTON HANDLING ===
+void readButtons() {
+  for (int i = 0; i < 17; i++) {
+    buttonStates[i] = digitalRead(buttonPins[i]);
+  }
+}
+
+bool buttonPressed(int index) {
+  bool pressed = (buttonStates[index] == HIGH && lastButtonStates[index] == LOW);
+  lastButtonStates[index] = buttonStates[index];
+  return pressed;
+}
+
+// === RECORDING ===
+void startRecording(int firstButton) {
+  Serial.println("==> Recording started");
+  eventCount = 0;
+  recordStartTime = millis();
+  recordEvent(firstButton);
+  currentState = RECORDING;
+}
+
+void recordEvent(int buttonIndex) {
+  if (eventCount >= MAX_EVENTS) return;
+
+  unsigned long now = millis();
+  events[eventCount].buttonIndex = buttonIndex;
+  events[eventCount].timestamp = now - recordStartTime;
+  events[eventCount].triggered = false;
+
+  Serial.print("Recorded button B");
+  Serial.print(buttonIndex);
+  Serial.print(" at ");
+  Serial.print(events[eventCount].timestamp);
+  Serial.println(" ms");
+
+  eventCount++;
+}
+
+// === REPLAYING ===
+void startReplay() {
+  Serial.print("==> Replaying ");
+  Serial.print(eventCount);
+  Serial.println(" events...");
+  replayStartTime = millis();
+
+  for (int i = 0; i < eventCount; i++) {
+    events[i].triggered = false;
+  }
+
+  currentState = REPLAYING;
+}
+
+void replayEventsNonBlocking() {
+  unsigned long now = millis() - replayStartTime;
+  bool allTriggered = true;
+
+  for (int i = 0; i < eventCount; i++) {
+    
+    if (!events[i].triggered && now >= events[i].timestamp) {
+      int ch = events[i].buttonIndex;
+      Serial.print("Turning servo ");
+      Serial.println(ch);
+      activateServo(ch);
+      events[i].triggered = true;
+    }
+
+    if (!events[i].triggered) {
+      allTriggered = false;
+    }
+  }
+
+  if (allTriggered) {
+    Serial.println("==> Replay complete.");
+      lcd.clear();
+      lcd.setCursor(0,0);
+      lcd.print("Replay complete");
+      lcd.setCursor(0,1);
+      lcd.print("System idle");
+      delay(1000);
+    if (loopingEnabled) {
+      Serial.println("-- Looping replay...");
+      lcd.clear();
+      lcd.setCursor(0,0);
+      lcd.print("Loop is on");
+      lcd.setCursor(0,1);
+      lcd.print("Starting over");
+      delay(1000);
+      replayStartTime = millis();
+      for (int i = 0; i < eventCount; i++) {
+        events[i].triggered = false;
+      }
+    } else {
+      currentState = IDLE;
+      Serial.println("Returning to IDLE state.");
+      Serial.println("Press start to begin recording.");
+    }
+  }
+}
+
+// === SERVO HANDLING (NON-BLOCKING) ===
+void activateServo(int ch) {
+  for (int i = 0; i < MAX_ACTIVE_SERVOS; i++) {
+    if (!activeServos[i].active) {
+      activeServos[i] = { ch, millis(), 0, true };
+      pwm.setPWM(ch, 0, degreesToPWM(SERVO_LEFT_DEG)); // Move to left
+      delay(SERVO_MOVE_DURATION);
+      pwm.setPWM(ch, 0, degreesToPWM(SERVO_RIGHT_DEG)); // Move to right
+      delay(SERVO_MOVE_DURATION);
+      return;
+    }
+  }
+}
+
+void updateActiveServos() {
+  unsigned long now = millis();
+  for (int i = 0; i < MAX_ACTIVE_SERVOS; i++) {
+    if (!activeServos[i].active) continue;
+
+    int ch = activeServos[i].channel;
+
+    if (activeServos[i].phase == 0 && now - activeServos[i].phaseStart >= SERVO_MOVE_DURATION) {
+      pwm.setPWM(ch, 0, degreesToPWM(SERVO_LEFT_DEG)); // Return
+      activeServos[i].phase = 1;
+      activeServos[i].phaseStart = now;
+    }
+    else if (activeServos[i].phase == 1 && now - activeServos[i].phaseStart >= SERVO_MOVE_DURATION) {
+      pwm.setPWM(ch, 0, degreesToPWM(SERVO_LEFT_DEG)); // Turn off (move to left)
+      activeServos[i].active = false;
+      activeServos[i].phase = 2;
+    }
+  }
+}
