@@ -70,10 +70,17 @@ Now that this was all done, I started printing a case for my arduino and breadbo
 My next steps are to finish enclosing my buttons and to start working on the dispenser mechanism. I did some prototyping while I was waiting for my buttons to arrive, and in between code updates, but now I need to make it more refined. My current prototype is just made out of cardboard. I will move to using acrylic and making 15 channels. I also need to connect my servo to my turning mechanism.
 
 # Second Milestone
-Coming soon!
-<!-- **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[<iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>](https://youtu.be/jsdgr_vZJ1o?si=NC4GnVmSV48da3KI)
+
+My second milestone was designing the method for dropping the marbles. I need a holder that will hold the marbles, and a method to dispense the marbles into different chutes. One of my original ideas was to have one rotating tube that would rotate until it was angled above the correct key, however, this would not provide functionality for chords. It would be more versatile to have a release mechanism for each note. 
+
+I started by prototyping a POC for sometime that I saw at a [Lego Great Ball Contraption](https://youtu.be/xj62Gs6MOcg?t=195).
+You can view my POC video [here](https://youtube.com/shorts/xi7r0nMGU64?feature=share).
+
+<div style="text-align:left"><img src="poc_marble_dispenser.jpg" alt="proof of concept" width="1500"/> </div>
+
+
 
 For your second milestone, explain what you've worked on since your previous milestone. You can highlight:
 - Technical details of what you've accomplished and how they contribute to the final goal
@@ -85,7 +92,7 @@ For your second milestone, explain what you've worked on since your previous mil
 Coming soon!
 <!-- **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/W3FBTAR4zqk?si=HGyaGsTzw0Li3gkW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 For your final milestone, explain the outcome of your project. Key details to include are:
 - What you've accomplished since your previous milestone
