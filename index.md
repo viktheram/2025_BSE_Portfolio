@@ -1,5 +1,6 @@
 # Marble Music Machine
-Last updated: Jun 30 11:28:30
+Last updated: July 20 11:04:57
+
 <details>
  <summary>&#9656; Helpful Resources</summary>
  Other Resources/Examples
@@ -79,14 +80,40 @@ I started by prototyping a POC for sometime that I saw at a [Lego Great Ball Con
 You can view my POC video [here](https://youtube.com/shorts/xi7r0nMGU64?feature=share).
 
 <div style="text-align:left"><img src="poc_marble_dispenser.jpg" alt="proof of concept" width="1500"/> </div>
+There are two rods, which seperate the chute into three sections:
+1. Storage, the space where the marbles are stored before dispensing.
+2. Holding, the active space between the two rods. Ready to dispense
+3. Dispensed, the marble has been dispensed. 
 
+The dispenser mechanism has two phases:
+1. Open, the two rods block any marbles from being dispensed. They allow one marble to enter holding. All other marbles shift up.
+2. Closed, the two rods rotate to block any new marbles from entering holding, while simultaneously dispensing a marble.
+This then repeats.
 
+My dispense mechanism went through many iterations. This is because the placement, and the size of the dispenser rods needed to be optimized. If I made the dispenser rods too thick, the servo would have to rotate a lot, and use more time to dispense marbles. However, if I made the dispenser rods too small, it wouldn't be reliable. Below, you can see my iterations.
+<div style="text-align:left"><img src="dispenser_progression.jpg" alt="proof of concept" width="1500"/> </div>
+1: My initial prototype. This only used rods to control the flow of marbles.
+2: From my first prototype, I extended the rods such that the marbles wouldn't jump over the rods.
+3: While not shown in the image, I made small decrements to the width of each of the rods. That way I would only need minimum effort.
+4: A problem with #3 was that the rods would snap off easily. So, I added a bridge between the rods. Note that the rods are still in the same place, just that they now were connected.
 
-For your second milestone, explain what you've worked on since your previous milestone. You can highlight:
-- Technical details of what you've accomplished and how they contribute to the final goal
-- What has been surprising about the project so far
-- Previous challenges you faced that you overcame
-- What needs to be completed before your final milestone -->
+I tested each of these prototypes with the rig that I had created earlier (see video)
+
+Now, before scaling this up, I needed to create the chute that would allow marbles to hit the xylophone keys. I wanted to do this first because it would allow proper alignment with the dispenser modules.
+<div style="text-align:left"><img src="dispense_chute.png" alt="proof of concept" width="1500"/> </div>
+
+I clamped together balsa and acrylic with superglue. I then used hot glue to glue the slats to the acrylic. I only needed to put four beads (in each corner) before sliding it in.
+
+After building this dispense chute, I just needed to multiply my dispense mechanism and add it to the top. However, here, I ran into an issue. That is because my prototypes had been putting the servo on the side. However, there wasn't enough room between chutes to put the servo on the side. The only other option was to put the servo on the bottom. However, this wasn't too difficult, I just had to rotate the entire contraption, and after a quick test, it worked pretty much the same.
+
+I then duplicated the dispenser mechanism 15 times and added a plate on top that would distribute the marbles amongst them. While the distribution system may seem messy, it's whole purpose is to randomise the trajectory of the marbles such that they go in different places each time. Then, I connected all of this to the dispenser chute, extended the wiring of all the servos, and completed Milestone 2.
+<div style="text-align:left"><img src="final_image_milestone2.png" alt="proof of concept" width="1500"/> </div>
+
+This milestone was definitely the smoothest milestone of all the other milestones, however it was definitely the most tedious. I had to extend each of the servo wires which meant I had to cut them in half and solder a wire in. This meant I had to solder 6 joints per servo. In adittion, my 3D print kept on failing because I had to print a very large object (the dispenser holder). I had to downsize it multiple times to try to lower the chance of failure.
+
+Hot gluing the slats was also extremely challenging as I had to try to glue it accurately, while still not soiling the acrylic. This is because hot glue bonds very strongly to acrylic. I had to redo my acrylic sheets because they got so dirty.
+
+Ultimately, my 2nd milestone turned out amazing and these challenges only led to more revisions that led to improvements in my soldering skills, 3d design skills, and hot gluing skills.
 
 # Final Milestone
 Coming soon!
