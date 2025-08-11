@@ -1,5 +1,5 @@
 # Marble Music Machine
-Last updated: July 20 11:04:57
+Last updated: August 11 2025 16:12:14
 
 <details>
  <summary>&#9656; Helpful Resources</summary>
@@ -116,16 +116,15 @@ Hot gluing the slats was also extremely challenging as I had to try to glue it a
 Ultimately, my 2nd milestone turned out amazing and these challenges only led to more revisions that led to improvements in my soldering skills, 3d design skills, and hot gluing skills.
 
 # Final Milestone
-Coming soon!
-<!-- **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
+<iframe width="1858" height="775" src="https://www.youtube.com/embed/W3FBTAR4zqk?list=PLe-u_DjFx7eui8dmPGji-0-slT8KydYv_" title="Vikram D. Milestone 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/W3FBTAR4zqk?si=HGyaGsTzw0Li3gkW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+The final milestone involved building the conveyor belt. The conveyor belt quickly became the most challenging part of my machine. For the conveyor belt, I decided to use a sandpaper belt for the loop. Because both the top and bottom axles would have to spin at the same speed, I also used a timing belt and pully, similar to those seen in 3D printers. 
 
-For your final milestone, explain the outcome of your project. Key details to include are:
-- What you've accomplished since your previous milestone
-- What your biggest challenges and triumphs were at BSE
-- A summary of key topics you learned about
-- What you hope to learn in the future after everything you've learned at BSE -->
+I used two tall pieces of wood as the supports and drilled holes for the axles to go through. The tensioning of the sandpaper belt and the timing belt where the hardest parats of this construction. This was mainly because we didn't have any method of tightening the belt other than by hand. We had to have enough tension that the as the axle spun, the sandpaper belt would spin around the belt. This is because we didn't have any spokes for the sandpaper to grip onto. 
+
+After I worked on the main construction, I had to add a stepper motor to turn the axle. At first, we used a very basic stepper motor (ESP32) before moving onto a NEMA 17 stepper motor. The NEMA17 gave much more power to the axle and took half as long to complete one full rotation (30 seconds opposed to 1 minute). The NEMA 17 should also be able to handle the weight of the marbles better.
+
+Unfortunately, I did not have much time during the third milestone to take pictures while I was working. You can see my final milestone video for more information on how my lift worked.
 
 # Bill of Materials
 
